@@ -29,6 +29,17 @@
     
 }
 
+- (id)initWithData:(NSObject*)data{
+    
+    if( (self=[super init]) ) {
+        self.leftChild = nil;
+        self.rightChild  = nil;
+        self.data = data;
+    }
+    return self;
+    
+}
+
 - (id)initWithData:(NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*) rightChild{
 
     if( (self=[super init]) ) {
@@ -46,7 +57,13 @@
     
 }
 
-+ (id)nodeWithData(NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*)rightChild{
++ (id)nodeWithData:(NSObject*)data{
+    
+    return [[DSBinaryTreeNode alloc]initWithData:data];
+    
+}
+
++ (id)nodeWithData:(NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*)rightChild{
     
     return [[DSBinaryTreeNode alloc] initWithData:data LeftChild:leftChild RightChild:rightChild];
     

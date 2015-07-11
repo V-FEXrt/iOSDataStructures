@@ -14,11 +14,7 @@
  
  Note: This binary tree node class is immutable, once a node has been constructed it can only be changed by creating a new node.
  */
-@interface DSBinaryTreeNode : NSObject{
-    DSBinaryTreeNode *leftChild;
-    DSBinaryTreeNode *rightChild;
-    NSObject *data;
-}
+@interface DSBinaryTreeNode : NSObject
 
 /**
  *  Left child of the binary tree node
@@ -36,11 +32,20 @@
 @property (nonatomic, readonly, retain) NSObject *data;
 
 /**
- *  Initializes a binary tree node with both children as nill
+ *  Initializes a binary tree node with both children and data as nil
  *
  *  @return The binary tree node instance
  */
 - (id)init;
+
+/**
+ *  Initializes a binary tree node with both children as nil
+ *
+ *  @param data The data to associate with the node
+ *
+ *  @return The binary tree node instance
+ */
+- (id)initWithData:(NSObject*)data;
 
 /**
  *  Initializes a binary tree node with the given children and data
@@ -54,11 +59,20 @@
 - (id)initWithData:(NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*) rightChild;
 
 /**
- *  Initializes a binary tree node with both children as nill
+ *  Initializes a binary tree node with both children as nil
  *
  *  @return The binary tree node instance
  */
 + (id)node;
+
+/**
+ *  Initializes a binary tree node with both children as nil
+ *
+ *  @param data The data to associate with the node
+ *
+ *  @return The binary tree node instance
+ */
++ (id)nodeWithData:(NSObject*)data;
 
 /**
  *  Initializes a binary tree node with the given children and data

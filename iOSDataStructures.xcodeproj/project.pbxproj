@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7700B8B51B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7700B8B41B51C05D0026E281 /* DSBinaryTreeNode.m */; };
+		7700B8B61B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7700B8B41B51C05D0026E281 /* DSBinaryTreeNode.m */; };
 		77D95FEC1B5174E700E0AE07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D95FEB1B5174E700E0AE07 /* main.m */; };
 		77D95FEF1B5174E700E0AE07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D95FEE1B5174E700E0AE07 /* AppDelegate.m */; };
 		77D95FF21B5174E700E0AE07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D95FF11B5174E700E0AE07 /* ViewController.m */; };
@@ -14,7 +16,6 @@
 		77D95FF71B5174E700E0AE07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77D95FF61B5174E700E0AE07 /* Images.xcassets */; };
 		77D95FFA1B5174E700E0AE07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D95FF81B5174E700E0AE07 /* LaunchScreen.xib */; };
 		77D960061B5174E700E0AE07 /* iOSDataStructuresTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D960051B5174E700E0AE07 /* iOSDataStructuresTests.m */; };
-		77D960121B51A92100E0AE07 /* Classes in Resources */ = {isa = PBXBuildFile; fileRef = 77D960111B51A92100E0AE07 /* Classes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7700B8B31B51C05D0026E281 /* DSBinaryTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSBinaryTreeNode.h; sourceTree = "<group>"; };
+		7700B8B41B51C05D0026E281 /* DSBinaryTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSBinaryTreeNode.m; sourceTree = "<group>"; };
 		77D95FE61B5174E700E0AE07 /* iOSDataStructures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDataStructures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D95FEA1B5174E700E0AE07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77D95FEB1B5174E700E0AE07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		77D95FFF1B5174E700E0AE07 /* iOSDataStructuresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSDataStructuresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D960041B5174E700E0AE07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77D960051B5174E700E0AE07 /* iOSDataStructuresTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSDataStructuresTests.m; sourceTree = "<group>"; };
-		77D960111B51A92100E0AE07 /* Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Classes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,8 @@
 		77D95FE81B5174E700E0AE07 /* iOSDataStructures */ = {
 			isa = PBXGroup;
 			children = (
-				77D960111B51A92100E0AE07 /* Classes */,
+				7700B8B31B51C05D0026E281 /* DSBinaryTreeNode.h */,
+				7700B8B41B51C05D0026E281 /* DSBinaryTreeNode.m */,
 				77D95FED1B5174E700E0AE07 /* AppDelegate.h */,
 				77D95FEE1B5174E700E0AE07 /* AppDelegate.m */,
 				77D95FF01B5174E700E0AE07 /* ViewController.h */,
@@ -204,7 +207,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				77D95FF51B5174E700E0AE07 /* Main.storyboard in Resources */,
-				77D960121B51A92100E0AE07 /* Classes in Resources */,
 				77D95FFA1B5174E700E0AE07 /* LaunchScreen.xib in Resources */,
 				77D95FF71B5174E700E0AE07 /* Images.xcassets in Resources */,
 			);
@@ -231,7 +233,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -r \"${PROJECT_DIR}/Documentation\"\n\n/usr/local/bin/appledoc  \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"ColeSter Productions\" \\\n--company-id \"com.colesterproductions\" \\\n--output \"${PROJECT_DIR}\" \\\n--no-create-docset \\\n--logformat xcode \\\n--explicit-crossref \\\n--exit-threshold 2 \\\n--ignore \"*.m\" \\\n\"${PROJECT_DIR}/${PROJECT_NAME}/Classes\"\n\nmv \"${PROJECT_DIR}/html\" \\\n\"${PROJECT_DIR}/Documentation\"";
+			shellScript = "rm -r \"${PROJECT_DIR}/Documentation\"\n\n/usr/local/bin/appledoc  \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"ColeSter Productions\" \\\n--company-id \"com.colesterproductions\" \\\n--output \"${PROJECT_DIR}\" \\\n--no-create-docset \\\n--logformat xcode \\\n--explicit-crossref \\\n--exit-threshold 2 \\\n--ignore \"*.m\" \\\n--ignore \"AppDelegate.h\" \\\n--ignore \"ViewController.h\" \\\n\"${PROJECT_DIR}/${PROJECT_NAME}\"\n\nmv \"${PROJECT_DIR}/html\" \\\n\"${PROJECT_DIR}/Documentation\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -243,6 +245,7 @@
 				77D95FF21B5174E700E0AE07 /* ViewController.m in Sources */,
 				77D95FEF1B5174E700E0AE07 /* AppDelegate.m in Sources */,
 				77D95FEC1B5174E700E0AE07 /* main.m in Sources */,
+				7700B8B51B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77D960061B5174E700E0AE07 /* iOSDataStructuresTests.m in Sources */,
+				7700B8B61B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
