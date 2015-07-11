@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+/**
+ *  Binary tree node
+ *  The node is immutable, to update it a new node must be created
+ */
 @interface DSBinaryTreeNode : NSObject{
     DSBinaryTreeNode *leftChild;
     DSBinaryTreeNode *rightChild;

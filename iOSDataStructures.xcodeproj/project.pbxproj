@@ -231,7 +231,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -r \"${PROJECT_DIR}/Documentation\"\n\n/usr/local/bin/appledoc  \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"ColeSter Productions\" \\\n--company-id \"com.colesterproductions\" \\\n--output \"${PROJECT_DIR}\" \\\n--no-create-docset \\\n--logformat xcode \\\n--exit-threshold 2 \\\n--ignore \"*.m\" \\\n\"${PROJECT_DIR}/Classes\"\n\nmv \"${PROJECT_DIR}/html\" \\\n\"${PROJECT_DIR}/Documentation\"";
+			shellScript = "rm -r \"${PROJECT_DIR}/Documentation\"\n\n/usr/local/bin/appledoc  \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"ColeSter Productions\" \\\n--company-id \"com.colesterproductions\" \\\n--output \"${PROJECT_DIR}\" \\\n--no-create-docset \\\n--logformat xcode \\\n--exit-threshold 2 \\\n--ignore \"*.m\" \\\n\"${PROJECT_DIR}/${PROJECT_NAME}/Classes\"\n\nmv \"${PROJECT_DIR}/html\" \\\n\"${PROJECT_DIR}/Documentation\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -439,6 +439,7 @@
 				77D9600B1B5174E700E0AE07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77D9600C1B5174E700E0AE07 /* Build configuration list for PBXNativeTarget "iOSDataStructuresTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +448,7 @@
 				77D9600E1B5174E700E0AE07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
