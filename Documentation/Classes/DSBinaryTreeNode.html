@@ -48,13 +48,41 @@
 
 	
 	
+	<option value="tasks">Tasks</option>
+	
 	
 
 	
 	
-
+	<optgroup label="Properties">
+		
+		<option value="//api/name/data">data</option>
+		
+		<option value="//api/name/leftChild">leftChild</option>
+		
+		<option value="//api/name/rightChild">rightChild</option>
+		
+	</optgroup>
 	
 
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/node">+ node</option>
+		
+		<option value="//api/name/nodeWithData:LeftChild:RightChild:">+ nodeWithData:LeftChild:RightChild:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithData:LeftChild:RightChild:">- initWithData:LeftChild:RightChild:</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -88,13 +116,415 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Binary tree node
-The node is immutable, to update it a new node must be created</p>
+						<p>From wikipedia: In computer science, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child.</p>
+
+<p>Beyond that each binary node has a data property for the given node.</p>
+
+<p>Note: This binary tree node class is immutable, once a node has been constructed it can only be changed by creating a new node.</p>
 					</div>
 					
 					
 
 					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/leftChild" title="leftChild"></a>
+	<h3 class="method-title"><code><a href="#//api/name/leftChild">&nbsp;&nbsp;leftChild</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Left child of the binary tree node</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, retain) DSBinaryTreeNode *leftChild</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Left child of the binary tree node</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSBinaryTreeNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rightChild" title="rightChild"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rightChild">&nbsp;&nbsp;rightChild</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Right child of the binary tree node</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, retain) DSBinaryTreeNode *rightChild</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Right child of the binary tree node</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSBinaryTreeNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/data" title="data"></a>
+	<h3 class="method-title"><code><a href="#//api/name/data">&nbsp;&nbsp;data</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Data property of the binary tree node</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, retain) NSObject *data</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Data property of the binary tree node</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSBinaryTreeNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a binary tree node with both children as nill</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)init</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The binary tree node instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a binary tree node with both children as nill</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSBinaryTreeNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithData:LeftChild:RightChild:" title="initWithData:LeftChild:RightChild:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithData:LeftChild:RightChild:">&ndash;&nbsp;initWithData:LeftChild:RightChild:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a binary tree node with the given children and data</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithData:(NSObject *)<em>data</em> LeftChild:(DSBinaryTreeNode *)<em>leftChild</em> RightChild:(DSBinaryTreeNode *)<em>rightChild</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>The value represented by the binary tree node</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>leftChild</code></th>
+						<td><p>the left child of the node. Can be passed as nil</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rightChild</code></th>
+						<td><p>the right child of the node. Can be passed as nil</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The binary tree node instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a binary tree node with the given children and data</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSBinaryTreeNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/node" title="node"></a>
+	<h3 class="method-title"><code><a href="#//api/name/node">+&nbsp;node</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a binary tree node with both children as nill</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)node</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The binary tree node instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a binary tree node with both children as nill</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSBinaryTreeNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nodeWithData:LeftChild:RightChild:" title="nodeWithData:LeftChild:RightChild:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nodeWithData:LeftChild:RightChild:">+&nbsp;nodeWithData:LeftChild:RightChild:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes a binary tree node with the given children and data</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)nodeWithData:(NSObject *)<em>data</em> LeftChild:(DSBinaryTreeNode *)<em>leftChild</em> RightChild:(DSBinaryTreeNode *)<em>rightChild</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>The value represented by the binary tree node</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>leftChild</code></th>
+						<td><p>the left child of the node. Can be passed as nil</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rightChild</code></th>
+						<td><p>the right child of the node. Can be passed as nil</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The binary tree node instance</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes a binary tree node with the given children and data</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSBinaryTreeNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
 					
 					
 

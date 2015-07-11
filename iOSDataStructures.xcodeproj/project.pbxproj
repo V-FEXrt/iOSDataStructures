@@ -231,7 +231,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -r \"${PROJECT_DIR}/Documentation\"\n\n/usr/local/bin/appledoc  \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"ColeSter Productions\" \\\n--company-id \"com.colesterproductions\" \\\n--output \"${PROJECT_DIR}\" \\\n--no-create-docset \\\n--logformat xcode \\\n--exit-threshold 2 \\\n--ignore \"*.m\" \\\n\"${PROJECT_DIR}/${PROJECT_NAME}/Classes\"\n\nmv \"${PROJECT_DIR}/html\" \\\n\"${PROJECT_DIR}/Documentation\"";
+			shellScript = "rm -r \"${PROJECT_DIR}/Documentation\"\n\n/usr/local/bin/appledoc  \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"ColeSter Productions\" \\\n--company-id \"com.colesterproductions\" \\\n--output \"${PROJECT_DIR}\" \\\n--no-create-docset \\\n--logformat xcode \\\n--explicit-crossref \\\n--exit-threshold 2 \\\n--ignore \"*.m\" \\\n\"${PROJECT_DIR}/${PROJECT_NAME}/Classes\"\n\nmv \"${PROJECT_DIR}/html\" \\\n\"${PROJECT_DIR}/Documentation\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 /**
- *  Binary tree node
- *  The node is immutable, to update it a new node must be created
+ From wikipedia: In computer science, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child.
+ 
+ Beyond that each binary node has a data property for the given node.
+ 
+ Note: This binary tree node class is immutable, once a node has been constructed it can only be changed by creating a new node.
  */
 @interface DSBinaryTreeNode : NSObject{
     DSBinaryTreeNode *leftChild;
@@ -17,14 +20,55 @@
     NSObject *data;
 }
 
+/**
+ *  Left child of the binary tree node
+ */
 @property (nonatomic, readonly, retain) DSBinaryTreeNode *leftChild;
+
+/**
+ *  Right child of the binary tree node
+ */
 @property (nonatomic, readonly, retain) DSBinaryTreeNode *rightChild;
+
+/**
+ *  Data property of the binary tree node
+ */
 @property (nonatomic, readonly, retain) NSObject *data;
 
+/**
+ *  Initializes a binary tree node with both children as nill
+ *
+ *  @return The binary tree node instance
+ */
 - (id)init;
+
+/**
+ *  Initializes a binary tree node with the given children and data
+ *
+ *  @param data       The value represented by the binary tree node
+ *  @param leftChild  the left child of the node. Can be passed as nil
+ *  @param rightChild the right child of the node. Can be passed as nil
+ *
+ *  @return The binary tree node instance
+ */
 - (id)initWithData:(NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*) rightChild;
 
+/**
+ *  Initializes a binary tree node with both children as nill
+ *
+ *  @return The binary tree node instance
+ */
 + (id)node;
-+ (id)nodeWithData(NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*)rightChild;
+
+/**
+ *  Initializes a binary tree node with the given children and data
+ *
+ *  @param data       The value represented by the binary tree node
+ *  @param leftChild  the left child of the node. Can be passed as nil
+ *  @param rightChild the right child of the node. Can be passed as nil
+ *
+ *  @return The binary tree node instance
+ */
++ (id)nodeWithData: (NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*)rightChild;
 
 @end
