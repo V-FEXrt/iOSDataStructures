@@ -1,6 +1,6 @@
 language: objective-c
-xcode_project: TryingTravis.xcodeproj
-xcode_scheme: TryingTravis
+xcode_project: iOSDataStructures.xcodeproj
+xcode_scheme: iOSDataStructures
 
 script:
-  - xctool -sdk iphonesimulator -project TryingTravis.xcodeproj -scheme TryingTravis test  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+  - xctool -sdk iphonesimulator -project iOSDataStructures.xcodeproj -scheme iOSDataStructures test  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
