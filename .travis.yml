@@ -5,13 +5,3 @@ xcode_scheme: iOSDataStructures
 script:
   - xctool -sdk iphonesimulator -project iOSDataStructures.xcodeproj -scheme iOSDataStructures test  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
   
-after_success:
-  - git config --global user.name "V-FEXrt"
-  - git config --global user.email "ashley78@ksu.edu"
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${TOKEN}:@github.com" > .git/credentials
-  - git remote set-url origin https://github.com/V-FEXrt/iOSDataStructures.git
-  - git checkout master
-  - git add --all
-  - git commit -m "Commit by Travis-CI Updating Documentation for build #$((TRAVIS_BUILD_NUMBER)) [ci skip]"
-  - git push origin master
