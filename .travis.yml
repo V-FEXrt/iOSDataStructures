@@ -1,0 +1,6 @@
+language: objective-c
+xcode_project: TryingTravis.xcodeproj
+xcode_scheme: TryingTravis
+
+script:
+  - xctool -sdk iphonesimulator -project TryingTravis.xcodeproj -scheme TryingTravis test  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
