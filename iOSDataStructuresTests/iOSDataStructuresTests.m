@@ -72,6 +72,7 @@
     XCTAssertTrue([cell5 isEqual:cell3], "Verify equality functinality");
     
     
+    
 }
 
 - (void)testDSBinaryTreeNode {
@@ -80,6 +81,7 @@
     DSBinaryTreeNode *node2;
     DSBinaryTreeNode *node3;
     DSBinaryTreeNode *node4;
+    DSBinaryTreeNode *node5;
     
     
     node = [DSBinaryTreeNode node];
@@ -111,6 +113,16 @@
     XCTAssertEqual(node4.data, data3, "Verify the data property is equal to the specified data");
     XCTAssertEqual(node4.leftChild, node2, "Verify nodes are equal as passed");
     XCTAssertEqual(node4.rightChild, node3, "Verify nodes are equal as passed");
+    
+    node5 = [DSBinaryTreeNode nodeWithData:data3 LeftChild:node2 RightChild:node3];
+    /* The objects are allocated differently therefore should be not equal at object level  */
+    XCTAssertNotEqual(node5, node4, "Verify equality functinality");
+    XCTAssertFalse(node5 == node4, "Verify equality functinality");
+    
+    /* The objects are equal in property, therefore equal at the data level                 */
+    XCTAssertTrue([node5 isEqualToBinaryTreeNode:node4], "Verify equality functinality");
+    XCTAssertTrue([node5 isEqual:node4], "Verify equality functinality");
+    
     
 }
 

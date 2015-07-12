@@ -59,6 +59,15 @@
 - (id)initWithData:(NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*) rightChild;
 
 /**
+ *  Returns a Boolean value that indicates whether the receiver and a given BinaryTreeNode are equal.
+ *
+ *  @param other node to be verified against
+ *
+ *  @return Returns true if the nodes are equal, otherwise false
+ */
+- (BOOL)isEqualToBinaryTreeNode:(DSBinaryTreeNode*)other;
+
+/**
  *  Initializes a binary tree node with both children as nil
  *
  *  @return The binary tree node instance

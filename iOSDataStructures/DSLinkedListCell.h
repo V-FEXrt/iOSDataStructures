@@ -41,7 +41,7 @@
 - (id)initWithData: (NSObject*)data Next: (DSLinkedListCell *)next;
 
 /**
- *  Returns a Boolean value that indicates whether the receiver and a given object are equal.
+ *  Returns a Boolean value that indicates whether the receiver and a given LinkedListCell are equal.
  *
  *  @param other cell to be verified against
  *

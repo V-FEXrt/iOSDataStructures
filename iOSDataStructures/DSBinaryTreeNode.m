@@ -51,6 +51,21 @@
     
 }
 
+- (BOOL)isEqual:(id)other {
+    if (other == self)
+        return YES;
+    if (!other || ![other isKindOfClass:[self class]])
+        return NO;
+    return [self isEqualToBinaryTreeNode:other];
+}
+
+- (BOOL)isEqualToBinaryTreeNode:(DSBinaryTreeNode*)other {
+    if (self == other)
+        return YES;
+    return ([self.data isEqual:other.data] && [self.leftChild isEqual:other.leftChild] && [self.rightChild isEqual:other.rightChild]);
+}
+
+
 + (id)node{
     
     return [[DSBinaryTreeNode alloc]init];
