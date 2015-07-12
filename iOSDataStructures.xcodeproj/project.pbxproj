@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7700B8B51B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7700B8B41B51C05D0026E281 /* DSBinaryTreeNode.m */; };
 		7700B8B61B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7700B8B41B51C05D0026E281 /* DSBinaryTreeNode.m */; };
+		7789B0BA1B52DE6D00034CF0 /* DSLinkedListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7789B0B91B52DE6D00034CF0 /* DSLinkedListCell.m */; };
+		7789B0BB1B52DE6D00034CF0 /* DSLinkedListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7789B0B91B52DE6D00034CF0 /* DSLinkedListCell.m */; };
 		77D95FEC1B5174E700E0AE07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D95FEB1B5174E700E0AE07 /* main.m */; };
 		77D95FEF1B5174E700E0AE07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D95FEE1B5174E700E0AE07 /* AppDelegate.m */; };
 		77D95FF21B5174E700E0AE07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D95FF11B5174E700E0AE07 /* ViewController.m */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		7700B8B31B51C05D0026E281 /* DSBinaryTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSBinaryTreeNode.h; sourceTree = "<group>"; };
 		7700B8B41B51C05D0026E281 /* DSBinaryTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSBinaryTreeNode.m; sourceTree = "<group>"; };
+		7789B0B81B52DE6D00034CF0 /* DSLinkedListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLinkedListCell.h; sourceTree = "<group>"; };
+		7789B0B91B52DE6D00034CF0 /* DSLinkedListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLinkedListCell.m; sourceTree = "<group>"; };
 		77D95FE61B5174E700E0AE07 /* iOSDataStructures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDataStructures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D95FEA1B5174E700E0AE07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77D95FEB1B5174E700E0AE07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 		77D95FE81B5174E700E0AE07 /* iOSDataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				7789B0B81B52DE6D00034CF0 /* DSLinkedListCell.h */,
+				7789B0B91B52DE6D00034CF0 /* DSLinkedListCell.m */,
 				7700B8B31B51C05D0026E281 /* DSBinaryTreeNode.h */,
 				7700B8B41B51C05D0026E281 /* DSBinaryTreeNode.m */,
 				77D95FED1B5174E700E0AE07 /* AppDelegate.h */,
@@ -246,6 +252,7 @@
 				77D95FEF1B5174E700E0AE07 /* AppDelegate.m in Sources */,
 				77D95FEC1B5174E700E0AE07 /* main.m in Sources */,
 				7700B8B51B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */,
+				7789B0BA1B52DE6D00034CF0 /* DSLinkedListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7789B0BB1B52DE6D00034CF0 /* DSLinkedListCell.m in Sources */,
 				77D960061B5174E700E0AE07 /* iOSDataStructuresTests.m in Sources */,
 				7700B8B61B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */,
 			);

@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 
 #import "DSBinaryTreeNode.h"
+#import "DSLinkedListCell.h"
 
 @interface iOSDataStructuresTests : XCTestCase
 
@@ -25,6 +26,52 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+-(void)testDSLinkedListCell{
+    DSLinkedListCell *cell;
+    DSLinkedListCell *cell2;
+    DSLinkedListCell *cell3;
+    DSLinkedListCell *cell4;
+    DSLinkedListCell *cell5;
+    
+    cell = [DSLinkedListCell cell];
+    XCTAssertNil(cell.data, "Verify data property is nil");
+    XCTAssertNil(cell.next, "Verify next property is nil");
+    
+    NSString *data = @"Test Data";
+    cell2 = [DSLinkedListCell cellWithData:data Next:nil];
+    XCTAssertEqual(data, cell2.data, "Verify the data property is equal to the specified data");
+    XCTAssertNil(cell2.next, "Verify next property is nil");
+    
+    NSString *data2 = @"New data";
+    cell3 = [DSLinkedListCell cellWithData:data2 Next:cell2];
+    XCTAssertEqual(cell3.data, data2, "Verify the data property is equal to the specified data");
+    XCTAssertEqual(cell3.next, cell2, "Verify the next property is equal to the specified data");
+    
+    NSString *data3 = @"Another data set";
+    cell2.next = cell;
+    cell.data = data3;
+    XCTAssertEqual(cell2.next, cell, "Verify the properties get properly reassigned");
+    XCTAssertEqual(cell.data, data3, "Verify the properties get properly reassigned");
+    
+    cell4 = cell3;
+    while (cell4.next != nil) {
+        XCTAssertNotNil(cell4.data, "Verify that the list can be iterated though, and that values were assigned");
+        XCTAssertNotNil(cell4.next, "Verify that the list can be itereated though");
+        cell4 = cell4.next;
+    }
+    
+    cell5 = [DSLinkedListCell cellWithData:data2 Next:cell2];
+    /* The objects are allocated differently therefore should be not equal at object level  */
+    XCTAssertNotEqual(cell5, cell3, "Verify equality functinality");
+    XCTAssertFalse(cell5 == cell3);
+    
+    /* The objects are equal in property, therefore equal at the data level                 */
+    XCTAssertTrue([cell5 isEqualToLinkedListCell:cell3], "Verify equality functinality");
+    XCTAssertTrue([cell5 isEqual:cell3], "Verify equality functinality");
+    
+    
 }
 
 - (void)testDSBinaryTreeNode {
