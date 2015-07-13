@@ -39,9 +39,14 @@
     XCTAssertNil(cell.data, "Verify data property is nil");
     XCTAssertNil(cell.next, "Verify next property is nil");
     
-    NSString *data = @"Test Data";
-    cell2 = [DSLinkedListCell cellWithData:data Next:nil];
-    XCTAssertEqual(data, cell2.data, "Verify the data property is equal to the specified data");
+    UIView *data0 = [[UIView alloc]init];
+    cell2 = [DSLinkedListCell cellWithData:data0 Next:nil];
+    XCTAssertEqual(data0, cell2.data, "Verify the data property is equal to the specified data");
+    XCTAssertNil(cell2.next, "Verify next property is nil");
+    
+    NSString *data1 = @"Test Data";
+    cell2 = [DSLinkedListCell cellWithData:data1 Next:nil];
+    XCTAssertEqual(data1, cell2.data, "Verify the data property is equal to the specified data");
     XCTAssertNil(cell2.next, "Verify next property is nil");
     
     NSString *data2 = @"New data";
@@ -90,11 +95,18 @@
     XCTAssertNil(node.leftChild, "Verify the left child is nil");
     XCTAssertNil(node.rightChild, "Verify the right child is nil");
     
+
+    UIView* data0 = [[UIView alloc]init];
+    node2 = [DSBinaryTreeNode nodeWithData:data0];
     
-    NSString* data = @"Test Data";
-    node2 = [DSBinaryTreeNode nodeWithData:data];
+    XCTAssertEqual(node2.data, data0, "Verify the data property is equal to the specified data");
+    XCTAssertNil(node2.leftChild, "Verify the left child is nil");
+    XCTAssertNil(node2.rightChild, "Verify the right child is nil");
     
-    XCTAssertEqual(node2.data, data, "Verify the data property is equal to the specified data");
+    NSString* data1 = @"Test Data";
+    node2 = [DSBinaryTreeNode nodeWithData:data1];
+    
+    XCTAssertEqual(node2.data, data1, "Verify the data property is equal to the specified data");
     XCTAssertNil(node2.leftChild, "Verify the left child is nil");
     XCTAssertNil(node2.rightChild, "Verify the right child is nil");
     

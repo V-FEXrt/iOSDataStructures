@@ -12,7 +12,7 @@
 
 @property (nonatomic, readwrite, retain) DSBinaryTreeNode *leftChild;
 @property (nonatomic, readwrite, retain) DSBinaryTreeNode *rightChild;
-@property (nonatomic, readwrite, retain) NSObject *data;
+@property (nonatomic, readwrite, retain) id data;
 
 @end
 
@@ -29,7 +29,7 @@
     
 }
 
-- (id)initWithData:(NSObject*)data{
+- (id)initWithData:(id)data{
     
     if( (self=[super init]) ) {
         self.leftChild = nil;
@@ -40,7 +40,7 @@
     
 }
 
-- (id)initWithData:(NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*) rightChild{
+- (id)initWithData:(id)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*) rightChild{
 
     if( (self=[super init]) ) {
         self.leftChild = leftChild;
@@ -72,13 +72,13 @@
     
 }
 
-+ (id)nodeWithData:(NSObject*)data{
++ (id)nodeWithData:(id)data{
     
     return [[DSBinaryTreeNode alloc]initWithData:data];
     
 }
 
-+ (id)nodeWithData:(NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*)rightChild{
++ (id)nodeWithData:(id)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*)rightChild{
     
     return [[DSBinaryTreeNode alloc] initWithData:data LeftChild:leftChild RightChild:rightChild];
     

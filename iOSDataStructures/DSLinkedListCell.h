@@ -16,7 +16,7 @@
 /**
  *  the data stored in the current cell
  */
-@property (nonatomic, readwrite, retain) NSObject *data;
+@property (nonatomic, readwrite, retain) id data;
 
 /**
  *  A reference to the next linked list cell
@@ -38,7 +38,7 @@
  *
  *  @return The linked list cell
  */
-- (id)initWithData: (NSObject*)data Next: (DSLinkedListCell *)next;
+- (id)initWithData: (id)data Next: (DSLinkedListCell *)next;
 
 /**
  *  Returns a Boolean value that indicates whether the receiver and a given LinkedListCell are equal.
@@ -64,6 +64,6 @@
  *
  *  @return The linked list cell
  */
-+ (id)cellWithData: (NSObject*)data Next: (DSLinkedListCell *)next;
++ (id)cellWithData: (id)data Next: (DSLinkedListCell *)next;
 
 @end

@@ -29,7 +29,7 @@
 /**
  *  Data property of the binary tree node
  */
-@property (nonatomic, readonly, retain) NSObject *data;
+@property (nonatomic, readonly, retain) id data;
 
 /**
  *  Initializes a binary tree node with both children and data as nil
@@ -45,7 +45,7 @@
  *
  *  @return The binary tree node instance
  */
-- (id)initWithData:(NSObject*)data;
+- (id)initWithData:(id)data;
 
 /**
  *  Initializes a binary tree node with the given children and data
@@ -56,7 +56,7 @@
  *
  *  @return The binary tree node instance
  */
-- (id)initWithData:(NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*) rightChild;
+- (id)initWithData:(id)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*) rightChild;
 
 /**
  *  Returns a Boolean value that indicates whether the receiver and a given BinaryTreeNode are equal.
@@ -81,7 +81,7 @@
  *
  *  @return The binary tree node instance
  */
-+ (id)nodeWithData:(NSObject*)data;
++ (id)nodeWithData:(id)data;
 
 /**
  *  Initializes a binary tree node with the given children and data
@@ -92,6 +92,6 @@
  *
  *  @return The binary tree node instance
  */
-+ (id)nodeWithData: (NSObject*)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*)rightChild;
++ (id)nodeWithData: (id)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*)rightChild;
 
 @end

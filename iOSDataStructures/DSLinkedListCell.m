@@ -20,7 +20,7 @@
     
 }
 
-- (id)initWithData:(NSObject *)data Next:(DSLinkedListCell *)next{
+- (id)initWithData:(id)data Next:(DSLinkedListCell *)next{
     
     if( (self=[super init]) ) {
         self.next = next;
@@ -50,7 +50,7 @@
     return [[DSLinkedListCell alloc]init];
 }
 
-+ (id)cellWithData:(NSObject *)data Next:(DSLinkedListCell *)next{
++ (id)cellWithData:(id)data Next:(DSLinkedListCell *)next{
     return [[DSLinkedListCell alloc]initWithData:data Next:next];
 }
 
