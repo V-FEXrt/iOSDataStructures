@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  A 
+ *  A linked list has a <data> property to represent the value for the current cell, and a <next> property to access the next cell
  */
 @interface DSLinkedListCell : NSObject
 

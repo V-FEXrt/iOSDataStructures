@@ -11,6 +11,7 @@
 
 #import "DSBinaryTreeNode.h"
 #import "DSLinkedListCell.h"
+#import "DSStack.h"
 
 @interface iOSDataStructuresTests : XCTestCase
 
@@ -26,6 +27,62 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+-(void)testDSStack{
+    DSStack *stack = [DSStack stack];
+    XCTAssertEqual(stack.count, 0, "Verify the count is at 0 when initialized");
+    XCTAssertNil([stack peak], "Verify peaking with no data returns nil");
+    XCTAssertNil([stack pop], "Verify poping with no data return nil");
+    
+    NSString *data0 = @"Some Data";
+    NSString *data1 = @"Other Data";
+    NSString *data2 = @"YADS";
+    NSNumber *data3 = @1;
+    
+    [stack push:data0];
+    [stack push:data1];
+    [stack push:data2];
+    [stack push:data3];
+    XCTAssertEqual(stack.count, 4, "Verify the count matches the number of objects");
+    XCTAssertEqual([stack pop], data3, "Verify poping returns the last item added");
+    XCTAssertEqual(stack.count, 3, "Verify the count is one lower");
+    XCTAssertEqual([stack peak], data2, "Verify peaking return the next item");
+    XCTAssertEqual(stack.count, 3, "Verify the count is the same");
+    XCTAssertEqual([stack pop], data2, "Verify peaking doesn't remove the object");
+    XCTAssertNotEqual([stack peak], data2, "Verify poping moves to the next item");
+    XCTAssertEqual([stack pop], data1, "Verify correct object retrieval");
+    XCTAssertEqual([stack pop], data0, "Verify correct object retrieval");
+    XCTAssertEqual(stack.count, 0, "Verify the stack is now empty");
+    XCTAssertNil([stack peak], "Verify peaking with no data returns nil");
+    XCTAssertNil([stack pop], "Verify poping with no data return nil");
+    
+    stack = [DSStack stack];
+    DSStack *stack2 = [DSStack stack];
+    [stack push:data0];
+    [stack push:data2];
+    [stack2 push:data0];
+    [stack2 push:data2];
+    /* The objects are allocated differently therefore should be not equal at object level  */
+    XCTAssertNotEqual(stack2, stack, "Verify equality functinality");
+    XCTAssertFalse(stack2 == stack);
+    
+    /* The objects are equal in property, therefore equal at the data level                 */
+    XCTAssertTrue([stack2 isEqualToStack:stack], "Verify equality functinality");
+    XCTAssertTrue([stack2 isEqual:stack], "Verify equality functinality");
+    
+    stack = [DSStack stack];
+    stack2 = [DSStack stack];
+    [stack push:data0];
+    [stack push:data2];
+
+    /* The objects are allocated differently therefore should be not equal at object level  */
+    XCTAssertNotEqual(stack2, stack, "Verify equality functinality");
+    XCTAssertFalse(stack2 == stack);
+    
+    /* The objects are  not equal in property, therefore not equal at the data level                 */
+    XCTAssertFalse([stack2 isEqualToStack:stack], "Verify equality functinality");
+    XCTAssertFalse([stack2 isEqual:stack], "Verify equality functinality");
 }
 
 -(void)testDSLinkedListCell{
@@ -75,6 +132,17 @@
     /* The objects are equal in property, therefore equal at the data level                 */
     XCTAssertTrue([cell5 isEqualToLinkedListCell:cell3], "Verify equality functinality");
     XCTAssertTrue([cell5 isEqual:cell3], "Verify equality functinality");
+    
+    
+    cell5 = [DSLinkedListCell cellWithData:data2 Next:cell2];
+    cell3 = [DSLinkedListCell cell];
+    /* The objects are allocated differently therefore should be not equal at object level  */
+    XCTAssertNotEqual(cell5, cell3, "Verify equality functinality");
+    XCTAssertFalse(cell5 == cell3);
+    
+    /* The objects are not equal in property, therefore not equal at the data level                 */
+    XCTAssertFalse([cell5 isEqualToLinkedListCell:cell3], "Verify equality functinality");
+    XCTAssertFalse([cell5 isEqual:cell3], "Verify equality functinality");
     
     
     
@@ -134,6 +202,16 @@
     /* The objects are equal in property, therefore equal at the data level                 */
     XCTAssertTrue([node5 isEqualToBinaryTreeNode:node4], "Verify equality functinality");
     XCTAssertTrue([node5 isEqual:node4], "Verify equality functinality");
+    
+    node5 = [DSBinaryTreeNode nodeWithData:data3 LeftChild:node2 RightChild:node3];
+    node4 = [DSBinaryTreeNode node];
+    /* The objects are allocated differently therefore should be not equal at object level  */
+    XCTAssertNotEqual(node5, node4, "Verify equality functinality");
+    XCTAssertFalse(node5 == node4, "Verify equality functinality");
+    
+    /* The objects are not equal in property, therefore not equal at the data level                 */
+    XCTAssertFalse([node5 isEqualToBinaryTreeNode:node4], "Verify equality functinality");
+    XCTAssertFalse([node5 isEqual:node4], "Verify equality functinality");
     
     
 }

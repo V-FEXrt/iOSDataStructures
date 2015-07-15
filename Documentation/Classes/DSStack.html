@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>DSLinkedListCell Class Reference</title>
+	<title>DSStack Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,9 +56,7 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/data">data</option>
-		
-		<option value="//api/name/next">next</option>
+		<option value="//api/name/count">count</option>
 		
 	</optgroup>
 	
@@ -66,9 +64,7 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/cell">+ cell</option>
-		
-		<option value="//api/name/cellWithData:Next:">+ cellWithData:Next:</option>
+		<option value="//api/name/stack">+ stack</option>
 		
 	</optgroup>
 	
@@ -78,9 +74,13 @@
 		
 		<option value="//api/name/init">- init</option>
 		
-		<option value="//api/name/initWithData:Next:">- initWithData:Next:</option>
+		<option value="//api/name/isEqualToStack:">- isEqualToStack:</option>
 		
-		<option value="//api/name/isEqualToLinkedListCell:">- isEqualToLinkedListCell:</option>
+		<option value="//api/name/peak">- peak</option>
+		
+		<option value="//api/name/pop">- pop</option>
+		
+		<option value="//api/name/push:">- push:</option>
 		
 	</optgroup>
 	
@@ -97,7 +97,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">DSLinkedListCell Class Reference</h1>
+					<h1 class="title">DSStack Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -106,7 +106,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>DSLinkedListCell.h</td>
+	<td>DSStack.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -116,7 +116,11 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A linked list has a <a href="#//api/name/data">data</a> property to represent the value for the current cell, and a <a href="#//api/name/next">next</a> property to access the next cell</p>
+						<p>A stack is First In Last Out (FILO), and the most recent object added to a stack will be the first object removed</p>
+
+<p><a href="#//api/name/pop">pop</a> is called to get and remove the object at the top of the stack.
+<a href="#//api/name/peak">peak</a> is called to get, but not remove the object at the top of the stack.
+<a href="#//api/name/push:">push:</a> will added the given object to the top of the stack.</p>
 					</div>
 					
 					
@@ -132,8 +136,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/data" title="data"></a>
-	<h3 class="method-title"><code><a href="#//api/name/data">&nbsp;&nbsp;data</a></code>
+	<a name="//api/name/count" title="count"></a>
+	<h3 class="method-title"><code><a href="#//api/name/count">&nbsp;&nbsp;count</a></code>
 </h3>
 
 	<div class="method-info">
@@ -143,12 +147,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>the data stored in the current cell</p>
+				<p>The total number of items in the stack</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite, retain) id data</code></div>
+			<div class="method-subsection method-declaration"><code>@property (readonly) int count</code></div>
 
 		    
 			
@@ -160,7 +164,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>the data stored in the current cell</p>
+				<p>The total number of items in the stack</p>
 			</div>
 			
 
@@ -171,53 +175,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSLinkedListCell.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/next" title="next"></a>
-	<h3 class="method-title"><code><a href="#//api/name/next">&nbsp;&nbsp;next</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>A reference to the next linked list cell</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite, retain) DSLinkedListCell *next</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>A reference to the next linked list cell</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSLinkedListCell.h</code></p>
+				<p><code class="declared-in-ref">DSStack.h</code></p>
 			</div>
 			
 			
@@ -235,7 +193,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initialzies a cell with nil for the data and next properites</p>
+				<p>Initializes a stack instance</p>
 			</div>
 			
 		    
@@ -248,7 +206,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The linked list cell</p>
+				<p>the stack instance</p>
 			</div>
 			
 
@@ -257,7 +215,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Initialzies a cell with nil for the data and next properites</p>
+				<p>Initializes a stack instance</p>
 			</div>
 			
 
@@ -268,15 +226,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSLinkedListCell.h</code></p>
+				<p><code class="declared-in-ref">DSStack.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/initWithData:Next:" title="initWithData:Next:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithData:Next:">&ndash;&nbsp;initWithData:Next:</a></code>
+	<a name="//api/name/peak" title="peak"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peak">&ndash;&nbsp;peak</a></code>
 </h3>
 
 	<div class="method-info">
@@ -286,12 +244,114 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initializes a cell</p>
+				<p>Returns the object at the top of the stack without removing it</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)initWithData:(id)<em>data</em> Next:(DSLinkedListCell *)<em>next</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (id)peak</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The object at the top of the stack</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the object at the top of the stack without removing it</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSStack.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pop" title="pop"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pop">&ndash;&nbsp;pop</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns and removes the object at the top of the stack</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)pop</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The object at the top of the stack</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns and removes the object at the top of the stack</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSStack.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/push:" title="push:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/push:">&ndash;&nbsp;push:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds the object to the top of the stack</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)push:(id)<em>object</em></code></div>
 
 		    
 			
@@ -300,13 +360,8 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>data</code></th>
-						<td><p>The value for the data property</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>next</code></th>
-						<td><p>the value for the next property</p></td>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>Object to be added to the stack</p></td>
 					</tr>
 				
 				</table>
@@ -314,18 +369,13 @@
 			
 
 			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The linked list cell</p>
-			</div>
-			
 
 			
 
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Initializes a cell</p>
+				<p>Adds the object to the top of the stack</p>
 			</div>
 			
 
@@ -336,15 +386,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSLinkedListCell.h</code></p>
+				<p><code class="declared-in-ref">DSStack.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/isEqualToLinkedListCell:" title="isEqualToLinkedListCell:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isEqualToLinkedListCell:">&ndash;&nbsp;isEqualToLinkedListCell:</a></code>
+	<a name="//api/name/isEqualToStack:" title="isEqualToStack:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isEqualToStack:">&ndash;&nbsp;isEqualToStack:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -354,12 +404,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns a Boolean value that indicates whether the receiver and a given LinkedListCell are equal.</p>
+				<p>Returns a Boolean value that indicates whether the receiver and a given stack are equal.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToLinkedListCell:(DSLinkedListCell *)<em>other</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToStack:(DSStack *)<em>other</em></code></div>
 
 		    
 			
@@ -369,7 +419,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>other</code></th>
-						<td><p>cell to be verified against</p></td>
+						<td><p>stack to be verified against</p></td>
 					</tr>
 				
 				</table>
@@ -379,7 +429,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Returns true if the cells are equal, otherwise false</p>
+				<p>Returns true if the stacks are equal, otherwise false</p>
 			</div>
 			
 
@@ -388,7 +438,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns a Boolean value that indicates whether the receiver and a given LinkedListCell are equal.</p>
+				<p>Returns a Boolean value that indicates whether the receiver and a given stack are equal.</p>
 			</div>
 			
 
@@ -399,15 +449,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSLinkedListCell.h</code></p>
+				<p><code class="declared-in-ref">DSStack.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/cell" title="cell"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cell">+&nbsp;cell</a></code>
+	<a name="//api/name/stack" title="stack"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stack">+&nbsp;stack</a></code>
 </h3>
 
 	<div class="method-info">
@@ -417,12 +467,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initialzies a cell with nil for the data and next properites</p>
+				<p>Initializes a stack instance</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (id)cell</code></div>
+			<div class="method-subsection method-declaration"><code>+ (id)stack</code></div>
 
 		    
 			
@@ -430,7 +480,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The linked list cell</p>
+				<p>the stack instance</p>
 			</div>
 			
 
@@ -439,7 +489,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Initialzies a cell with nil for the data and next properites</p>
+				<p>Initializes a stack instance</p>
 			</div>
 			
 
@@ -450,75 +500,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSLinkedListCell.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/cellWithData:Next:" title="cellWithData:Next:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/cellWithData:Next:">+&nbsp;cellWithData:Next:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Initializes a cell</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (id)cellWithData:(id)<em>data</em> Next:(DSLinkedListCell *)<em>next</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>data</code></th>
-						<td><p>The value for the data property</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>next</code></th>
-						<td><p>the value for the next property</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The linked list cell</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Initializes a cell</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSLinkedListCell.h</code></p>
+				<p><code class="declared-in-ref">DSStack.h</code></p>
 			</div>
 			
 			
