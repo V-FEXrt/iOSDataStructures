@@ -55,7 +55,8 @@
     
     if ([self.stackArray count] == self.count + 1) {
         //Double the size of the array
-        for (int i = 0; i < [self.stackArray count]; i++) {
+        NSUInteger arraySize = [self.stackArray count];
+        for (int i = 0; i < arraySize; i++) {
             [self.stackArray addObject:[NSNull null]];
         }
     }

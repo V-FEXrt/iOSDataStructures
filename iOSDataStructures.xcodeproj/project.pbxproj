@@ -10,6 +10,8 @@
 		7700B8B51B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7700B8B41B51C05D0026E281 /* DSBinaryTreeNode.m */; };
 		7700B8B61B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7700B8B41B51C05D0026E281 /* DSBinaryTreeNode.m */; };
 		7720484E1B55DAE7001A1FF9 /* DSStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 7720484D1B55DAE7001A1FF9 /* DSStack.m */; };
+		77663F171B5735AC005D8582 /* DSQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 77663F161B5735AC005D8582 /* DSQueue.m */; };
+		77663F181B5735AC005D8582 /* DSQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 77663F161B5735AC005D8582 /* DSQueue.m */; };
 		7789B0BA1B52DE6D00034CF0 /* DSLinkedListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7789B0B91B52DE6D00034CF0 /* DSLinkedListCell.m */; };
 		7789B0BB1B52DE6D00034CF0 /* DSLinkedListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7789B0B91B52DE6D00034CF0 /* DSLinkedListCell.m */; };
 		77D95FEC1B5174E700E0AE07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D95FEB1B5174E700E0AE07 /* main.m */; };
@@ -36,6 +38,8 @@
 		7700B8B41B51C05D0026E281 /* DSBinaryTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSBinaryTreeNode.m; sourceTree = "<group>"; };
 		7720484C1B55DAE7001A1FF9 /* DSStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSStack.h; sourceTree = "<group>"; };
 		7720484D1B55DAE7001A1FF9 /* DSStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSStack.m; sourceTree = "<group>"; };
+		77663F151B5735AC005D8582 /* DSQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSQueue.h; sourceTree = "<group>"; };
+		77663F161B5735AC005D8582 /* DSQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSQueue.m; sourceTree = "<group>"; };
 		7789B0B81B52DE6D00034CF0 /* DSLinkedListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLinkedListCell.h; sourceTree = "<group>"; };
 		7789B0B91B52DE6D00034CF0 /* DSLinkedListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLinkedListCell.m; sourceTree = "<group>"; };
 		77D95FE61B5174E700E0AE07 /* iOSDataStructures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDataStructures.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +96,8 @@
 		77D95FE81B5174E700E0AE07 /* iOSDataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				77663F151B5735AC005D8582 /* DSQueue.h */,
+				77663F161B5735AC005D8582 /* DSQueue.m */,
 				7720484C1B55DAE7001A1FF9 /* DSStack.h */,
 				7720484D1B55DAE7001A1FF9 /* DSStack.m */,
 				7789B0B81B52DE6D00034CF0 /* DSLinkedListCell.h */,
@@ -259,6 +265,7 @@
 				7720484E1B55DAE7001A1FF9 /* DSStack.m in Sources */,
 				7700B8B51B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */,
 				7789B0BA1B52DE6D00034CF0 /* DSLinkedListCell.m in Sources */,
+				77663F171B5735AC005D8582 /* DSQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77663F181B5735AC005D8582 /* DSQueue.m in Sources */,
 				7789B0BB1B52DE6D00034CF0 /* DSLinkedListCell.m in Sources */,
 				77D960061B5174E700E0AE07 /* iOSDataStructuresTests.m in Sources */,
 				7700B8B61B51C05D0026E281 /* DSBinaryTreeNode.m in Sources */,

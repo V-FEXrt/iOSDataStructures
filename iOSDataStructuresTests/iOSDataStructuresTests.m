@@ -12,6 +12,7 @@
 #import "DSBinaryTreeNode.h"
 #import "DSLinkedListCell.h"
 #import "DSStack.h"
+#import "DSQueue.h"
 
 @interface iOSDataStructuresTests : XCTestCase
 
@@ -40,19 +41,33 @@
     NSString *data2 = @"YADS";
     NSNumber *data3 = @1;
     
+    [stack push:@"Test"];
+    [stack push:@"going"];
+    [stack push:@"past"];
+    [stack push:@"the initial"];
+    [stack push:@"array size of 5"];
     [stack push:data0];
     [stack push:data1];
     [stack push:data2];
     [stack push:data3];
-    XCTAssertEqual(stack.count, 4, "Verify the count matches the number of objects");
+    
+    XCTAssertEqual(stack.count, 9, "Verify the count matches the number of objects");
     XCTAssertEqual([stack pop], data3, "Verify poping returns the last item added");
-    XCTAssertEqual(stack.count, 3, "Verify the count is one lower");
+    XCTAssertEqual(stack.count, 8, "Verify the count is one lower");
     XCTAssertEqual([stack peak], data2, "Verify peaking return the next item");
-    XCTAssertEqual(stack.count, 3, "Verify the count is the same");
+    XCTAssertEqual(stack.count, 8, "Verify the count is the same");
     XCTAssertEqual([stack pop], data2, "Verify peaking doesn't remove the object");
     XCTAssertNotEqual([stack peak], data2, "Verify poping moves to the next item");
     XCTAssertEqual([stack pop], data1, "Verify correct object retrieval");
     XCTAssertEqual([stack pop], data0, "Verify correct object retrieval");
+    
+    //Empty the stack
+    [stack pop];
+    [stack pop];
+    [stack pop];
+    [stack pop];
+    XCTAssertEqual([stack pop], @"Test", "Verify the last return item was the first entered");
+    
     XCTAssertEqual(stack.count, 0, "Verify the stack is now empty");
     XCTAssertNil([stack peak], "Verify peaking with no data returns nil");
     XCTAssertNil([stack pop], "Verify poping with no data return nil");
@@ -64,12 +79,12 @@
     [stack2 push:data0];
     [stack2 push:data2];
     /* The objects are allocated differently therefore should be not equal at object level  */
-    XCTAssertNotEqual(stack2, stack, "Verify equality functinality");
+    XCTAssertNotEqual(stack2, stack, "Verify equality functionality");
     XCTAssertFalse(stack2 == stack);
     
     /* The objects are equal in property, therefore equal at the data level                 */
-    XCTAssertTrue([stack2 isEqualToStack:stack], "Verify equality functinality");
-    XCTAssertTrue([stack2 isEqual:stack], "Verify equality functinality");
+    XCTAssertTrue([stack2 isEqualToStack:stack], "Verify equality functionality");
+    XCTAssertTrue([stack2 isEqual:stack], "Verify equality functionality");
     
     stack = [DSStack stack];
     stack2 = [DSStack stack];
@@ -77,12 +92,82 @@
     [stack push:data2];
 
     /* The objects are allocated differently therefore should be not equal at object level  */
-    XCTAssertNotEqual(stack2, stack, "Verify equality functinality");
+    XCTAssertNotEqual(stack2, stack, "Verify equality functionality");
     XCTAssertFalse(stack2 == stack);
     
     /* The objects are  not equal in property, therefore not equal at the data level                 */
-    XCTAssertFalse([stack2 isEqualToStack:stack], "Verify equality functinality");
-    XCTAssertFalse([stack2 isEqual:stack], "Verify equality functinality");
+    XCTAssertFalse([stack2 isEqualToStack:stack], "Verify equality functionality");
+    XCTAssertFalse([stack2 isEqual:stack], "Verify equality functionality");
+}
+
+-(void)testDSQueue{
+    DSQueue *queue = [DSQueue queue];
+    XCTAssertEqual(queue.count, 0, "Verify the count is at 0 when initialized");
+    XCTAssertNil([queue peak], "Verify peaking with no data returns nil");
+    XCTAssertNil([queue dequeue], "Verify dequeue with no data returns nil");
+    
+    NSString *data0 = @"Some Data";
+    NSString *data1 = @"Other Data";
+    NSString *data2 = @"YADS";
+    NSNumber *data3 = @1;
+    
+    [queue enqueue:data0];
+    [queue enqueue:data1];
+    [queue enqueue:data2];
+    [queue enqueue:data3];
+    [queue enqueue:@"Test"];
+    [queue enqueue:@"going"];
+    [queue enqueue:@"past"];
+    [queue enqueue:@"the initial"];
+    [queue enqueue:@"array size of 5"];
+    
+    XCTAssertEqual(queue.count, 9, "Verify the count matches the number of objects");
+    XCTAssertEqual([queue dequeue], data0, "Verify dequeue returns the last item added");
+    XCTAssertEqual(queue.count, 8, "Verify the count is one lower");
+    XCTAssertEqual([queue peak], data1, "Verify peaking return the next item");
+    XCTAssertEqual(queue.count, 8, "Verify the count is the same");
+    XCTAssertEqual([queue dequeue], data1, "Verify peaking doesn't remove the object");
+    XCTAssertNotEqual([queue peak], data1, "Verify dequeue moves to the next item");
+    XCTAssertEqual([queue dequeue], data2, "Verify correct object retrieval");
+    XCTAssertEqual([queue dequeue], data3, "Verify correct object retrieval");
+    
+    //Empty out the queue
+    [queue dequeue];
+    [queue dequeue];
+    [queue dequeue];
+    [queue dequeue];
+    XCTAssertEqual([queue dequeue], @"array size of 5", "Verify the last item was the last item added");
+    
+    XCTAssertEqual(queue.count, 0, "Verify the queue is now empty");
+    XCTAssertNil([queue peak], "Verify peaking with no data returns nil");
+    XCTAssertNil([queue dequeue], "Verify dequeue with no data return nil");
+    
+    queue = [DSQueue queue];
+    DSQueue *queue2 = [DSQueue queue];
+    [queue enqueue:data0];
+    [queue enqueue:data2];
+    [queue2 enqueue:data0];
+    [queue2 enqueue:data2];
+    /* The objects are allocated differently therefore should be not equal at object level  */
+    XCTAssertNotEqual(queue2, queue, "Verify equality functionality");
+    XCTAssertFalse(queue2 == queue);
+    
+    /* The objects are equal in property, therefore equal at the data level                 */
+    XCTAssertTrue([queue2 isEqualToQueue:queue], "Verify equality functionality");
+    XCTAssertTrue([queue2 isEqual:queue], "Verify equality functionality");
+    
+    queue = [DSQueue queue];
+    queue2 = [DSQueue queue];
+    [queue enqueue:data0];
+    [queue enqueue:data2];
+    
+    /* The objects are allocated differently therefore should be not equal at object level  */
+    XCTAssertNotEqual(queue2, queue, "Verify equality functionality");
+    XCTAssertFalse(queue2 == queue);
+    
+    /* The objects are  not equal in property, therefore not equal at the data level                 */
+    XCTAssertFalse([queue2 isEqualToQueue:queue], "Verify equality functionality");
+    XCTAssertFalse([queue2 isEqual:queue], "Verify equality functionality");
 }
 
 -(void)testDSLinkedListCell{
@@ -126,23 +211,23 @@
     
     cell5 = [DSLinkedListCell cellWithData:data2 Next:cell2];
     /* The objects are allocated differently therefore should be not equal at object level  */
-    XCTAssertNotEqual(cell5, cell3, "Verify equality functinality");
+    XCTAssertNotEqual(cell5, cell3, "Verify equality functionality");
     XCTAssertFalse(cell5 == cell3);
     
     /* The objects are equal in property, therefore equal at the data level                 */
-    XCTAssertTrue([cell5 isEqualToLinkedListCell:cell3], "Verify equality functinality");
-    XCTAssertTrue([cell5 isEqual:cell3], "Verify equality functinality");
+    XCTAssertTrue([cell5 isEqualToLinkedListCell:cell3], "Verify equality functionality");
+    XCTAssertTrue([cell5 isEqual:cell3], "Verify equality functionality");
     
     
     cell5 = [DSLinkedListCell cellWithData:data2 Next:cell2];
     cell3 = [DSLinkedListCell cell];
     /* The objects are allocated differently therefore should be not equal at object level  */
-    XCTAssertNotEqual(cell5, cell3, "Verify equality functinality");
+    XCTAssertNotEqual(cell5, cell3, "Verify equality functionality");
     XCTAssertFalse(cell5 == cell3);
     
     /* The objects are not equal in property, therefore not equal at the data level                 */
-    XCTAssertFalse([cell5 isEqualToLinkedListCell:cell3], "Verify equality functinality");
-    XCTAssertFalse([cell5 isEqual:cell3], "Verify equality functinality");
+    XCTAssertFalse([cell5 isEqualToLinkedListCell:cell3], "Verify equality functionality");
+    XCTAssertFalse([cell5 isEqual:cell3], "Verify equality functionality");
     
     
     
@@ -196,22 +281,22 @@
     
     node5 = [DSBinaryTreeNode nodeWithData:data3 LeftChild:node2 RightChild:node3];
     /* The objects are allocated differently therefore should be not equal at object level  */
-    XCTAssertNotEqual(node5, node4, "Verify equality functinality");
-    XCTAssertFalse(node5 == node4, "Verify equality functinality");
+    XCTAssertNotEqual(node5, node4, "Verify equality functionality");
+    XCTAssertFalse(node5 == node4, "Verify equality functionality");
     
     /* The objects are equal in property, therefore equal at the data level                 */
-    XCTAssertTrue([node5 isEqualToBinaryTreeNode:node4], "Verify equality functinality");
-    XCTAssertTrue([node5 isEqual:node4], "Verify equality functinality");
+    XCTAssertTrue([node5 isEqualToBinaryTreeNode:node4], "Verify equality functionality");
+    XCTAssertTrue([node5 isEqual:node4], "Verify equality functionality");
     
     node5 = [DSBinaryTreeNode nodeWithData:data3 LeftChild:node2 RightChild:node3];
     node4 = [DSBinaryTreeNode node];
     /* The objects are allocated differently therefore should be not equal at object level  */
-    XCTAssertNotEqual(node5, node4, "Verify equality functinality");
-    XCTAssertFalse(node5 == node4, "Verify equality functinality");
+    XCTAssertNotEqual(node5, node4, "Verify equality functionality");
+    XCTAssertFalse(node5 == node4, "Verify equality functionality");
     
     /* The objects are not equal in property, therefore not equal at the data level                 */
-    XCTAssertFalse([node5 isEqualToBinaryTreeNode:node4], "Verify equality functinality");
-    XCTAssertFalse([node5 isEqual:node4], "Verify equality functinality");
+    XCTAssertFalse([node5 isEqualToBinaryTreeNode:node4], "Verify equality functionality");
+    XCTAssertFalse([node5 isEqual:node4], "Verify equality functionality");
     
     
 }

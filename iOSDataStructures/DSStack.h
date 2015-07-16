@@ -13,7 +13,7 @@
  
  <pop> is called to get and remove the object at the top of the stack.
  <peak> is called to get, but not remove the object at the top of the stack.
- <push:> will added the given object to the top of the stack.
+ <push:> will add the given object to the top of the stack.
  
  */
 @interface DSStack : NSObject

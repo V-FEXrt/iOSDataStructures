@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>DSStack Class Reference</title>
+	<title>DSQueue Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -64,7 +64,7 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/stack">+ stack</option>
+		<option value="//api/name/queue">+ queue</option>
 		
 	</optgroup>
 	
@@ -72,15 +72,15 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/dequeue">- dequeue</option>
+		
+		<option value="//api/name/enqueue:">- enqueue:</option>
+		
 		<option value="//api/name/init">- init</option>
 		
-		<option value="//api/name/isEqualToStack:">- isEqualToStack:</option>
+		<option value="//api/name/isEqualToQueue:">- isEqualToQueue:</option>
 		
 		<option value="//api/name/peak">- peak</option>
-		
-		<option value="//api/name/pop">- pop</option>
-		
-		<option value="//api/name/push:">- push:</option>
 		
 	</optgroup>
 	
@@ -97,7 +97,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">DSStack Class Reference</h1>
+					<h1 class="title">DSQueue Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -106,7 +106,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>DSStack.h</td>
+	<td>DSQueue.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -116,11 +116,11 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A stack is First In Last Out (FILO), and the most recent object added to a stack will be the first object removed</p>
+						<p>A queue is First In First Out (FIFO), and the first object added will be the first removed</p>
 
-<p><a href="#//api/name/pop">pop</a> is called to get and remove the object at the top of the stack.
-<a href="#//api/name/peak">peak</a> is called to get, but not remove the object at the top of the stack.
-<a href="#//api/name/push:">push:</a> will add the given object to the top of the stack.</p>
+<p><a href="#//api/name/dequeue">dequeue</a> is called to get and remove the object at the front of the queue.
+<a href="#//api/name/peak">peak</a> is called to get, but not remove the object at the front of the queue.
+<a href="#//api/name/enqueue:">enqueue:</a> will added the given object to the end of the queue.</p>
 					</div>
 					
 					
@@ -147,7 +147,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The total number of items in the stack</p>
+				<p>The total number of items in the queue</p>
 			</div>
 			
 		    
@@ -164,7 +164,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The total number of items in the stack</p>
+				<p>The total number of items in the queue</p>
 			</div>
 			
 
@@ -175,7 +175,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSStack.h</code></p>
+				<p><code class="declared-in-ref">DSQueue.h</code></p>
 			</div>
 			
 			
@@ -193,7 +193,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initializes a stack instance</p>
+				<p>Initializes a queue instance</p>
 			</div>
 			
 		    
@@ -206,7 +206,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>the stack instance</p>
+				<p>the queue instance</p>
 			</div>
 			
 
@@ -215,7 +215,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Initializes a stack instance</p>
+				<p>Initializes a queue instance</p>
 			</div>
 			
 
@@ -226,7 +226,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSStack.h</code></p>
+				<p><code class="declared-in-ref">DSQueue.h</code></p>
 			</div>
 			
 			
@@ -244,7 +244,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns the object at the top of the stack without removing it</p>
+				<p>Returns the object at the front of the queue without removing it</p>
 			</div>
 			
 		    
@@ -257,7 +257,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The object at the top of the stack</p>
+				<p>The object at the front of the queue</p>
 			</div>
 			
 
@@ -266,7 +266,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns the object at the top of the stack without removing it</p>
+				<p>Returns the object at the front of the queue without removing it</p>
 			</div>
 			
 
@@ -277,15 +277,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSStack.h</code></p>
+				<p><code class="declared-in-ref">DSQueue.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/pop" title="pop"></a>
-	<h3 class="method-title"><code><a href="#//api/name/pop">&ndash;&nbsp;pop</a></code>
+	<a name="//api/name/dequeue" title="dequeue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dequeue">&ndash;&nbsp;dequeue</a></code>
 </h3>
 
 	<div class="method-info">
@@ -295,12 +295,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns and removes the object at the top of the stack</p>
+				<p>Returns and removes the object at the front of the queue</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)pop</code></div>
+			<div class="method-subsection method-declaration"><code>- (id)dequeue</code></div>
 
 		    
 			
@@ -308,7 +308,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The object at the top of the stack</p>
+				<p>The object at the front of the queue</p>
 			</div>
 			
 
@@ -317,7 +317,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns and removes the object at the top of the stack</p>
+				<p>Returns and removes the object at the front of the queue</p>
 			</div>
 			
 
@@ -328,15 +328,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSStack.h</code></p>
+				<p><code class="declared-in-ref">DSQueue.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/push:" title="push:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/push:">&ndash;&nbsp;push:</a></code>
+	<a name="//api/name/enqueue:" title="enqueue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/enqueue:">&ndash;&nbsp;enqueue:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -346,12 +346,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Adds the object to the top of the stack</p>
+				<p>Adds the object to the back of the queue</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)push:(id)<em>object</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)enqueue:(id)<em>object</em></code></div>
 
 		    
 			
@@ -361,7 +361,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>object</code></th>
-						<td><p>Object to be added to the stack</p></td>
+						<td><p>Object to be added to the queue</p></td>
 					</tr>
 				
 				</table>
@@ -375,7 +375,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Adds the object to the top of the stack</p>
+				<p>Adds the object to the back of the queue</p>
 			</div>
 			
 
@@ -386,15 +386,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSStack.h</code></p>
+				<p><code class="declared-in-ref">DSQueue.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/isEqualToStack:" title="isEqualToStack:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isEqualToStack:">&ndash;&nbsp;isEqualToStack:</a></code>
+	<a name="//api/name/isEqualToQueue:" title="isEqualToQueue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isEqualToQueue:">&ndash;&nbsp;isEqualToQueue:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -404,12 +404,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns a Boolean value that indicates whether the receiver and a given stack are equal.</p>
+				<p>Returns a Boolean value that indicates whether the receiver and a given queue are equal.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToStack:(DSStack *)<em>other</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToQueue:(DSQueue *)<em>other</em></code></div>
 
 		    
 			
@@ -419,7 +419,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>other</code></th>
-						<td><p>stack to be verified against</p></td>
+						<td><p>queue to be verified against</p></td>
 					</tr>
 				
 				</table>
@@ -429,7 +429,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Returns true if the stacks are equal, otherwise false</p>
+				<p>Returns true if the queue are equal, otherwise false</p>
 			</div>
 			
 
@@ -438,7 +438,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns a Boolean value that indicates whether the receiver and a given stack are equal.</p>
+				<p>Returns a Boolean value that indicates whether the receiver and a given queue are equal.</p>
 			</div>
 			
 
@@ -449,15 +449,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSStack.h</code></p>
+				<p><code class="declared-in-ref">DSQueue.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/stack" title="stack"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stack">+&nbsp;stack</a></code>
+	<a name="//api/name/queue" title="queue"></a>
+	<h3 class="method-title"><code><a href="#//api/name/queue">+&nbsp;queue</a></code>
 </h3>
 
 	<div class="method-info">
@@ -467,12 +467,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initializes a stack instance</p>
+				<p>Initializes a queue instance</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (id)stack</code></div>
+			<div class="method-subsection method-declaration"><code>+ (id)queue</code></div>
 
 		    
 			
@@ -480,7 +480,7 @@
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>the stack instance</p>
+				<p>the queue instance</p>
 			</div>
 			
 
@@ -489,7 +489,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Initializes a stack instance</p>
+				<p>Initializes a queue instance</p>
 			</div>
 			
 
@@ -500,7 +500,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DSStack.h</code></p>
+				<p><code class="declared-in-ref">DSQueue.h</code></p>
 			</div>
 			
 			
