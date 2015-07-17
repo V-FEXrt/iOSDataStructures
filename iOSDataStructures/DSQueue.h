@@ -13,7 +13,7 @@
  
  <dequeue> is called to get and remove the object at the front of the queue.
  <peak> is called to get, but not remove the object at the front of the queue.
- <enqueue:> will added the given object to the end of the queue.
+ <enqueue:> will add the given object to the end of the queue.
  
  */
 @interface DSQueue : NSObject

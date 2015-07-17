@@ -298,6 +298,117 @@
     XCTAssertFalse([node5 isEqualToBinaryTreeNode:node4], "Verify equality functionality");
     XCTAssertFalse([node5 isEqual:node4], "Verify equality functionality");
     
+    /* Test the add node function  */
+    node = [DSBinaryTreeNode nodeWithData:@"S"];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"A"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"B"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"U"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"T"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"Z"]];
+    XCTAssertEqual(node.leftChild.data, @"A", "Verify 'A' was added in correct location");
+    XCTAssertTrue([node.leftChild.rightChild.data isEqualToString: @"B"], "Verify 'B' was added correct location");
+    XCTAssertTrue([node.rightChild.data isEqualToString: @"U"], "Verify 'U' was added correct location");
+    XCTAssertTrue([node.rightChild.leftChild.data isEqualToString: @"T"], "Verify 'T' was added correct location");
+    XCTAssertTrue([node.rightChild.rightChild.data isEqualToString: @"Z"], "Verify 'Z' was added correct location");
+
+    XCTAssertThrows([node addNode:[DSBinaryTreeNode nodeWithData:nil LeftChild:node2 RightChild:node3]], "Verify an exception is throw if data is nil, but children are not");
+    
+    /* Test the removeNodeAndChildren function  */
+    node = [DSBinaryTreeNode nodeWithData:@"S"];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"A"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"B"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"U"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"T"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"Z"]];
+    
+    [node removeNodeAndChildren:[DSBinaryTreeNode nodeWithData:@"B"]];
+    XCTAssertNil(node.leftChild.rightChild, "Verify the 'B' node no longer exists");
+    
+    [node removeNodeAndChildren:[DSBinaryTreeNode nodeWithData:@"U"]];
+    XCTAssertNil(node.rightChild, "Verify the 'U' node no longer exists");
+    XCTAssertFalse([node nodeExists:[DSBinaryTreeNode nodeWithData:@"T"]], "Verify the 'T' node was also removed" );
+    XCTAssertFalse([node nodeExists:[DSBinaryTreeNode nodeWithData:@"Z"]], "Verify the 'Z' node was also removed" );
+    
+    node = [DSBinaryTreeNode node];
+    XCTAssertThrows([node removeNodeAndChildren:node], "Verify removing self throws an execption");
+    
+    node = [DSBinaryTreeNode nodeWithData:@"A"];
+    XCTAssertNoThrow([node removeNodeAndChildren:[DSBinaryTreeNode nodeWithData:@"B"]], "Verify removing a non existant node is handled");
+    
+    
+    /* Test the removeNode function */
+    node = [DSBinaryTreeNode nodeWithData:@"S"];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"A"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"B"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"U"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"T"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"Z"]];
+    
+    [node removeNode:[DSBinaryTreeNode nodeWithData:@"A"]];
+    XCTAssertFalse([node.leftChild.data isEqualToString:@"A"], "Verify that the left child is no longer 'A'");
+    XCTAssertTrue([node.leftChild.data isEqualToString:@"B"], "Verify that the left child is now 'B'");
+    
+    [node removeNode:[DSBinaryTreeNode nodeWithData:@"U"]];
+    XCTAssertFalse([node.rightChild.data isEqualToString:@"U"], "Verify that the right child is no longer 'U'");
+    XCTAssertTrue([node.rightChild.data isEqualToString:@"T"], "Verify that the right child is now 'T'");
+    XCTAssertTrue([node.rightChild.rightChild.data isEqualToString:@"Z"], "Verify 'Z' was added correct location");
+    
+    node = [DSBinaryTreeNode node];
+    XCTAssertThrows([node removeNode:node], "Verify removing self throws an execption");
+    
+    node = [DSBinaryTreeNode nodeWithData:@"A"];
+    XCTAssertNoThrow([node removeNode:[DSBinaryTreeNode nodeWithData:@"B"]], "Verify removing a non existant node is handled");
+    
+    /* Test the merge function      */
+    node = [DSBinaryTreeNode nodeWithData:@"T"];
+    node3 = [DSBinaryTreeNode merge:node With:nil];
+    XCTAssertTrue([node.data isEqualToString:node3.data], "Verify handles nil params");
+    
+    node = [DSBinaryTreeNode nodeWithData:@"T"];
+    node3 = [DSBinaryTreeNode merge:nil With:node];
+    XCTAssertTrue([node.data isEqualToString:node3.data], "Verify handles nil params");
+    
+    node = [DSBinaryTreeNode node];
+    node2 = [DSBinaryTreeNode node];
+    
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"A"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"F"]];
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"O"]];
+    
+    [node2 addNode:[DSBinaryTreeNode nodeWithData:@"D"]];
+    [node2 addNode:[DSBinaryTreeNode nodeWithData:@"I"]];
+    [node2 addNode:[DSBinaryTreeNode nodeWithData:@"T"]];
+    [node2 addNode:[DSBinaryTreeNode nodeWithData:@"Z"]];
+    
+    node3 = [DSBinaryTreeNode merge:node With:node2];
+    XCTAssertTrue([node.data isEqualToString:@"A"], "Verify that 'A' was added in correct location");
+    XCTAssertTrue([node.rightChild.leftChild.data isEqualToString:@"D"], "Verify that 'D' was added in correct location");
+    XCTAssertTrue([node.rightChild.data isEqualToString:@"F"], "Verify that 'F' was added in correct location");
+    XCTAssertTrue([node.rightChild.rightChild.data isEqualToString:@"O"], "Verify that 'O' was added in correct location");
+    XCTAssertTrue([node.rightChild.leftChild.rightChild.data isEqualToString:@"I"], "Verify that 'I' was added in correct location");
+    XCTAssertTrue([node.rightChild.leftChild.rightChild.rightChild.data isEqualToString:@"T"], "Verify that 'T' was added in correct location");
+    XCTAssertTrue([node.rightChild.leftChild.rightChild.rightChild.rightChild.data isEqualToString:@"Z"], "Verify that 'Z' was added in correct location");
+    
+    /* Test the exists function     */
+    
+    node = [DSBinaryTreeNode nodeWithData:@"A"];
+    XCTAssertTrue([node nodeExists:node], "Verify returns true when passed itself");
+    XCTAssertFalse([node nodeExists:[DSBinaryTreeNode node]], "Verify handles nil node");
+    [node addNode:[DSBinaryTreeNode node]];
+    XCTAssertTrue([node nodeExists:[DSBinaryTreeNode node]], "Verify handles nil node");
+    [node addNode:[DSBinaryTreeNode nodeWithData:@"J"]];
+    XCTAssertTrue([node nodeExists:[DSBinaryTreeNode nodeWithData:@"J"]], "Verify true for node that exists");
+    XCTAssertFalse([node nodeExists:[DSBinaryTreeNode nodeWithData:@"Q"]], "Verify false for node that doesn't exist");
+    
+    
+    /* Test the compare function    */
+    node = [DSBinaryTreeNode nodeWithData:@"A"];
+    node2 = [DSBinaryTreeNode nodeWithData:@"B"];
+    node3 = [DSBinaryTreeNode nodeWithData:@"C"];
+    
+    XCTAssertTrue([node compare:node2] == NSOrderedAscending, "Verify true that A->B is ascending");
+    XCTAssertTrue([node3 compare:node2] == NSOrderedDescending, "Verify true that C->B is descending");
+    XCTAssertTrue([node2 compare:node2] == NSOrderedSame, "Verify true that B->B is the same");
     
 }
 

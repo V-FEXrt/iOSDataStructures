@@ -58,6 +58,19 @@
  */
 - (id)initWithData:(id)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*) rightChild;
 
+
+-(void)addNode:(DSBinaryTreeNode*)node;
+
+-(void)removeNode:(DSBinaryTreeNode*)node;
+
+-(void)removeNodeAndChildren:(DSBinaryTreeNode*)node;
+
+-(BOOL)nodeExists:(DSBinaryTreeNode*)node;
+
+
+
+- (NSComparisonResult)compare:(DSBinaryTreeNode*)other;
+
 /**
  *  Returns a Boolean value that indicates whether the receiver and a given BinaryTreeNode are equal.
  *
@@ -93,5 +106,7 @@
  *  @return The binary tree node instance
  */
 + (id)nodeWithData: (id)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*)rightChild;
+
++(DSBinaryTreeNode *)merge:(DSBinaryTreeNode*)node With:(DSBinaryTreeNode*)otherNode;
 
 @end
