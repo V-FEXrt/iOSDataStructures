@@ -80,6 +80,8 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/addNode:">- addNode:</option>
+		
 		<option value="//api/name/init">- init</option>
 		
 		<option value="//api/name/initWithData:">- initWithData:</option>
@@ -87,6 +89,12 @@
 		<option value="//api/name/initWithData:LeftChild:RightChild:">- initWithData:LeftChild:RightChild:</option>
 		
 		<option value="//api/name/isEqualToBinaryTreeNode:">- isEqualToBinaryTreeNode:</option>
+		
+		<option value="//api/name/nodeExists:">- nodeExists:</option>
+		
+		<option value="//api/name/removeNode:">- removeNode:</option>
+		
+		<option value="//api/name/removeNodeAndChildren:">- removeNodeAndChildren:</option>
 		
 	</optgroup>
 	
@@ -467,6 +475,249 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/addNode:" title="addNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addNode:">&ndash;&nbsp;addNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a node to the calling node in order.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addNode:(DSBinaryTreeNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>Node to be added to the calling node</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Adds a node to the calling node in order.</p>
+
+<p>Note: The data type must implement compare: and all nodes should have the same type for data</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSBinaryTreeNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeNode:" title="removeNode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeNode:">&ndash;&nbsp;removeNode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a node from the calling node and keeps all the children</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeNode:(DSBinaryTreeNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>Node to be deleted</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes a node from the calling node and keeps all the children</p>
+
+<p>Note: The data type must implement compare: and all nodes should have the same type for data</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSBinaryTreeNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeNodeAndChildren:" title="removeNodeAndChildren:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeNodeAndChildren:">&ndash;&nbsp;removeNodeAndChildren:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a node and its children from the calling node</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeNodeAndChildren:(DSBinaryTreeNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>Node to be deleted</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes a node and its children from the calling node</p>
+
+<p>Note: The data type must implement compare: and all nodes should have the same type for data</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSBinaryTreeNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nodeExists:" title="nodeExists:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nodeExists:">&ndash;&nbsp;nodeExists:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns true if the given node exists in the calling node, otherwise returns false</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)nodeExists:(DSBinaryTreeNode *)<em>node</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>node</code></th>
+						<td><p>Node to be searched for</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returs true if node exists, otherwise false</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns true if the given node exists in the calling node, otherwise returns false</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DSBinaryTreeNode.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/isEqualToBinaryTreeNode:" title="isEqualToBinaryTreeNode:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/isEqualToBinaryTreeNode:">&ndash;&nbsp;isEqualToBinaryTreeNode:</a></code>
 </h3>
@@ -731,7 +982,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 ColeSter Productions. All rights reserved. Updated: 2015-07-16</p>
+						<p class="copyright">Copyright &copy; 2015 ColeSter Productions. All rights reserved. Updated: 2015-07-17</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

@@ -58,13 +58,40 @@
  */
 - (id)initWithData:(id)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*) rightChild;
 
-
+/**
+ *  Adds a node to the calling node in order.
+ *
+ * Note: The data type must implement compare: and all nodes should have the same type for data
+ *
+ *  @param node Node to be added to the calling node
+ */
 -(void)addNode:(DSBinaryTreeNode*)node;
 
+/**
+ *  Removes a node from the calling node and keeps all the children
+ *
+ * Note: The data type must implement compare: and all nodes should have the same type for data
+ *
+ *  @param node Node to be deleted
+ */
 -(void)removeNode:(DSBinaryTreeNode*)node;
 
+/**
+ *  Removes a node and its children from the calling node
+ *
+ * Note: The data type must implement compare: and all nodes should have the same type for data
+ *
+ *  @param node Node to be deleted
+ */
 -(void)removeNodeAndChildren:(DSBinaryTreeNode*)node;
 
+/**
+ *  Returns true if the given node exists in the calling node, otherwise returns false
+ *
+ *  @param node Node to be searched for
+ *
+ *  @return Returs true if node exists, otherwise false
+ */
 -(BOOL)nodeExists:(DSBinaryTreeNode*)node;
 
 
