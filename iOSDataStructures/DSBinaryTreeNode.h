@@ -95,7 +95,15 @@
 -(BOOL)nodeExists:(DSBinaryTreeNode*)node;
 
 
-
+/**
+ *  Compares the data property of two nodes
+ *
+ * Note: The data type must implement compare: and all nodes should have the same type for data
+ *
+ *  @param other Node to be compared againstd
+ *
+ *  @return NSOrdered type. NSOrderedSame if equal, NSOrderedAccending if the second is larger. NSOrderedDecending if the second is smaller
+ */
 - (NSComparisonResult)compare:(DSBinaryTreeNode*)other;
 
 /**
@@ -134,6 +142,14 @@
  */
 + (id)nodeWithData: (id)data LeftChild:(DSBinaryTreeNode*)leftChild RightChild:(DSBinaryTreeNode*)rightChild;
 
+/**
+ *  Merges to binary tree nodes and returns the resulting binary tree node
+ *
+ *  @param node      First node to be merged
+ *  @param otherNode Second node to be merged
+ *
+ *  @return The node represented by the merging of the two node parameters
+ */
 +(DSBinaryTreeNode *)merge:(DSBinaryTreeNode*)node With:(DSBinaryTreeNode*)otherNode;
 
 @end
