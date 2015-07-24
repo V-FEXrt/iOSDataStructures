@@ -13,6 +13,7 @@
 #import "DSLinkedListCell.h"
 #import "DSStack.h"
 #import "DSQueue.h"
+#import "DSTrie.h"
 
 @interface iOSDataStructuresTests : XCTestCase
 
@@ -412,5 +413,14 @@
     
 }
 
+- (void)testDSTrie{
+    DSTrie *trie = [DSTrie trie];
+    [trie add:@"cat"];
+    [trie add:@"antidisestablishmentarianism"];
+    
+    XCTAssertTrue([trie contains:@"cat"], "Minor level testing");
+    XCTAssertTrue([trie contains:@"antidisestablishmentarianism"], "Minor level testing");
+    XCTAssertFalse([trie contains:@"dog"], "Minor level testing");
+}
 
 @end
