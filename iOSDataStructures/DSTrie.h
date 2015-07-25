@@ -16,6 +16,8 @@
 - (BOOL)contains:(NSString*)string;
 - (void)add:(NSString*)string;
 
+- (BOOL)isEqualToTrie:(DSTrie *)other;
+
 +(id)trie;
 
 @end

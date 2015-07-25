@@ -66,6 +66,20 @@
     }
 }
 
+- (BOOL)isEqual:(id)other {
+    if (other == self)
+        return YES;
+    if (!other || ![other isKindOfClass:[self class]])
+        return NO;
+    return [self isEqualToTrie:other];
+}
+
+- (BOOL)isEqualToTrie:(DSTrie *)other{
+    if (self == other)
+        return YES;
+    return ((self.isEnd == other.isEnd) && [self.children isEqualToArray:other.children]);
+}
+
 +(id)trie{
     return [[DSTrie alloc]init];
 }
