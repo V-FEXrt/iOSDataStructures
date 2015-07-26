@@ -418,9 +418,32 @@
     [trie add:@"cat"];
     [trie add:@"antidisestablishmentarianism"];
     
+    DSTrie *trie2 = [DSTrie trie];
+    [trie2 add:@"cat"];
+    [trie2 add:@"antidisestablishmentarianism"];
+    
     XCTAssertTrue([trie contains:@"cat"], "Minor level testing");
     XCTAssertTrue([trie contains:@"antidisestablishmentarianism"], "Minor level testing");
     XCTAssertFalse([trie contains:@"dog"], "Minor level testing");
+    
+    XCTAssertNotEqual(trie, trie2, "Verify equality functionality");
+    XCTAssertFalse(trie == trie2, "Verify equality functionality");
+    
+    /* The objects are equal in property, therefore equal at the data level                 */
+    XCTAssertTrue([trie isEqualToTrie:trie2], "Verify equality functionality");
+    XCTAssertTrue([trie isEqual:trie2], "Verify equality functionality");
+    
+    trie = [DSTrie trie];
+    trie2 = [DSTrie trie];
+    
+    [trie add:@"data"];
+    /* The objects are allocated differently therefore should be not equal at object level  */
+    XCTAssertNotEqual(trie, trie2, "Verify equality functionality");
+    XCTAssertFalse(trie == trie2, "Verify equality functionality");
+    
+    /* The objects are not equal in property, therefore not equal at the data level                 */
+    XCTAssertFalse([trie isEqualToTrie:trie2], "Verify equality functionality");
+    XCTAssertFalse([trie isEqual:trie2], "Verify equality functionality");
 }
 
 @end

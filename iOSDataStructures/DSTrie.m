@@ -53,7 +53,7 @@
     }
     else if ([string characterAtIndex:0] > 'z' | [string characterAtIndex:0] < 'a')
     {
-        [NSException raise:@"Invalid Parameter Execption" format:@"The strings added to the trie can currently only be alphabetical chars"];
+        [NSException raise:@"Invalid Parameter Execption" format:@"The strings added to the trie can currently only be lowercase alphabetical chars"];
     }
     else
     {
